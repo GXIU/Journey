@@ -1,0 +1,65 @@
+\chapter{4月}
+\pagenumbering{arabic}
+
+20日。
+
+\cite{asllani2018structure}
+就有那么一些时刻让你，毫无办法。
+
+稳定性概念的理解是一个好大的问题。历史沿革大概如下：40年前，罗伯特·梅在《自然》杂志上撰文，对生态学的核心信仰提出质疑。公认的观点是，复杂的生态系统比简单的生态系统更稳定，但可以证明，足够大或复杂的生态网络往往不稳定。从那时起，理论生态学的许多工作都集中在研究为什么特定的非随机网络在实践中是稳定的。Stefano Allesina和Si Tang分析了不同类型现实网络的稳定性标准，发现了捕食者-猎物相互作用（稳定）与竞争和互惠相互作用（不稳定）之间的关键区别。
+
+稳定性的意义是度量系统在扰动后恢复到平衡的趋势，数学上定义为所有特征值的实部都是负的的系统。在不稳定系统中，即使是微小的扰动也会使系统偏离平衡，从而可能导致物种的损失。这个研究的insight是，随机网络通常是不稳定的。而自然系统中，由于存在着捕食关系等关系，以及非常漫长的自然选择，淘汰掉极多的使系统不稳定的系统组分，从而降低了系统的随机性，并提高了生态系统的稳定性。所以，有\textit{自然选择}的相互作用关系会使得系统更稳定，比如捕食关系；没有\textit{自然选择}的相互作用会使系统变得不稳定，比如互利共生关系。
+
+这让我们思考一个问题：让男女傻逼也能找到媳妇/老公是不是对的？这种互利共生关系是否会使得人类系统更容易陷入崩溃？面对外来打击更加不堪一击？
+
+Community matrix是这个系统中的主要语言。它是一个 $ S\times S$ 的矩阵，$S$ 为物种数，$M_{ij}$ 描述了物种在一个平衡点之间的交互强度。在 May 的工作中，对角线系数为 $-1$, 非对角线系数取自于均值为$0$，方差为 $\sigma^2$ 的分布（概率为 $C$，否则为0。这个$C$也是连通度）。定义\textbf{复杂度}为$\sigma \sqrt{SC}$, 则其大于$1$时，系统几乎没有可能是稳定的。
+
+局部稳定性只能描述系统在平衡点周围的行为，而自然系统被认为远离稳定状态。不过这种方法对于大系统很合适，尤其对于外来冲击来说是自然的：受冲击的人口密度通常是接近于$0$的。所以我们有必要发展这套方法。
+
+\textbf{理论}：没想到竟然用到了Terrence的定理，荣幸了。矩阵元$\mathbb{E} (M_{ij})_{i\ne j} = 0$, $\text{Var} (M_{ij})_{i\ne j} = C\sigma^2$. 对角线认为都是$0$. 根据 Girko 圆律和 Tao定理的推广，任意有限二阶矩且均值为$0$的分布$X$, 矩阵$M/(\sigma \sqrt{SC})$的特征值均匀分布在圆心为$(0,0)$的单位圆盘上，当$S\to \infty$时。所以一般矩阵的特征值都分布在半径为$\sigma\sqrt{SC}$的圆盘上，圆心为对角线元素大小$-d$. 
+
+21日。
+
+附上今天早上给王舰迎师兄和贺秋时的留言：
+
+Dear both, 
+
+前两个PDF分别是Stability criteria for complex ecosystems的正文和补充材料。其中补充材料的2.1部分开始有一些我们需要的证明。具体的对应我还需要一些时间来建立。
+补充材料的大体思路为：1. 如果矩阵M的对角线元素为0，非对角线元素从均值为0，方差为$\sigma^2$的正态分布中采样，再将其中$(1-C)$的元素变为$0$，则矩阵$M/(\sigma \sqrt{SC})$的特征值分布在圆心为$0$，半径为$1$的单位圆盘上； 这使得，如果对角线元素为$-d$，则所有特征值分布在圆心为$-d$，半径为$\sigma\sqrt{SC}$的圆盘上。进而如果该半径小于$d$，系统就是稳定的。2. 如果假设对称元素的相关性，对应真实世界中捕食，互利共生等关系，则圆将会变为椭圆。这种建立相关性的方法与我们研究中的人类移动性模式也是通用的。这两部分的理论基础都在第三篇中，是陶哲轩et.al. 用随机矩阵方法的证明。
+
+昨天与贺秋时探讨的过程中理清楚了一件事：物种数$S$相当于我们的Census Tract数量，连通度$C$相当于阻断两个区域之间的沟通，这与我们之前的$\delta$和$\theta$的讨论是类似的，但我们的调参$(\theta, \delta)$会出现很多的小特征值在0附近波动，进而负特征值百分比的办法不是个好办法。但是，按照上面的框架，控制$S$相当于删除编号为$i$的行列，控制$C$相当于类似于关停个别地铁站之类的措施。从而我们有一些稳定性判断准则来得到想要的控制措施。总之框架是可以拯救的。只是我还需要仔细设计一下实验，用尽量少的经费完成我们需要的结果。
+
+今天我要讲小组会，昨天promise的timeline有可能完不成了。不过我会尽快。谢谢二位！
+
+\dotfill
+
+附上一部分新版本Allee的稿子：
+
+The rapid spread of the COVID-19 in urban areas demonstrated the vulnerability of cities under external attacks. Witnessing the obstable of politicisation of control measures and people's willingness to adopt recommended measures~\cite{wells2021interplay}, quantifying the interplay between acceptance of non-pharmaceutical interventions (the adoption of masks and physical distancing) and pharmaceutical interventions (hospital cares, vaccination, etc.) seems of great concern. However, due to the complexity of human mobility, heterogeneous spatial distribution of the infected, and the unfairness of medical resources, predicting the outbreaks of the epidemic under different controlling measures is hard.
+
+In the view of dynamical ecological system, epidemic spreading among $S$ urban patches (for example, communities and street blocks) can be understood as the interaction of infected subpopulations. Specifically, if we regard the infected population $I_{i}$ in an urban patch $i$ as a species, the spread of a disease results in the changes in the abundance. Thus the interaction of epidemic spreading can be described by a community matrix $M$, sized $S\times S$. In urban context, the diagonal elements of matrix $M$ representing self-regulation are determined by both self-recovery and hospital capacity. The elements of $M$ changes dramatically with the spatial distribution of infection rate in a city, but can be regard as linear operator near a feasible equilibrium point, for an obvious example, $I_{i} = 0$ for $i$ in $1,2,\dots, S$. If the system does not satisfy some local stability criteria, infinitesimal perturbations drive the system away from the significant equilibrium point of totally uninfected, $I^{*} = {(0,0,\dots, 0)}^T$, i.e., an epidemic outbreak. Mathematically, the equilibrium is only stable if each of the real parts of community matrix's eigenvalues is negative.
+
+Epidemic spread in cities can easily adopt the stability framework described in~\cite{allesina2012stability}, by defining the proportion of non-minimal interactions that contain infected individuals between different urban patches as $C$, and approximate the rate of recovery to be even all over a city so that $-d = \text{diag} M = \text{tr} M / S$. Further, human mobility among urban patches are well-documented as power-law, the variance of the urban visitation, denoted as $\sigma^2$, is presumably very large.
+
+Unlike the community matrix in natural and random systems described in~\cite{may1972will, allesina2012stability}, the induced epidemic-spreading community matrix is extremely hard to be stable, since all the pairwise interaction corresponds to spreading is non-negative. Following the criteria in~\cite{allesina2012stability}, the system is only stable if $\sqrt{SC} < \theta = d / \sigma$. Thus, to control a pandemic, counting on the pharmeceutical resources captured in parameter $d$ is far from enough. Designing reasonable non-pharmeceutical interventions to restrict human mobility in cities is of great importance and the main concern of this paper.
+
+今天开完组会蹲在416进门的地方想哭来着，没想到放了个屁。自己想想，我还是喜欢自己的科研的，但我还喜欢科研吗？我也不知道。深深地被打败。
+
+22日。
+
+我非常怀疑之前实验中很多特征值都是0附近。
+
+\textbf{非结构化矩阵的稳定性准则}：\begin{enumerate}
+    \item 随机矩阵：$\bar{\lambda} = -d$, $\text{Var}(\lambda) = 0$.
+    \item 捕食矩阵等几个都是：$\bar{\lambda} = -d$, $\text{Var}(\lambda) = 2(S-1)C\sigma^2/\pi$. 
+\end{enumerate}
+
+纯随机部分：Stability Criteria 补充材料的2.1，提到了两个定理，Girko的圆周定理和Terence的随机矩阵理论。得到了一个准则：$\sqrt{SC} < d / \sigma$.
+
+捕食被捕食：Sommers定理：take a matrix $A$, whose elements are follow a Gaussian distribution with mean $E(A_{ij}) = 0$, variance $Var(A_{ij}) = 1/S$, and correlation $E(A_{ij}A_{ji}) = \tau/S$, for all the elements $A_{ij}$. Then, when the size $S \to \infty$, the eigenvalues of $A$, $\lambda = x + iy$, are uniformly distributed on an ellipse $(x/a)^{2} + (y/b)^{2} \geq 1$, where $a = 1 + \tau$ and $b = 1 − \tau$. 作者猜测这个结果对于非高斯分布也是成立的，并做了大量的数值模拟。
+
+所以，求解的核心是对称元素的相关性。需要一个实验1，注意去掉设置为0的行列。细节在第六页，我先不抄了。
+
+注意捕食被捕食系统中，$E(M_{ij}M_{ji})_{i \ne j} = -CE^{2}(|X|)$, 而随机情况则是$0$. 捕食被捕食网络可以通过$M/(\sigma \sqrt{SC})$得到如上要求的矩阵。\textbf{对角线元素的作用}：自我消化能力，使得系统便稳定。于是稳定性条件是$a < d$, 也就是 $\sigma\sqrt{SC}(1-E^{2}(|X|)/\sigma^{2}) < d$.
+
+实验2: 人类移动性的分布规律 （flowwise），以及对称元素的相关性。hint，去掉相关性可能是稳定化系统的重要途径？让去不让回，这种。

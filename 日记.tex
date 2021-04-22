@@ -1,0 +1,38 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsfonts}
+\usepackage{geometry}
+\usepackage{ctex}
+\usepackage{setspace}
+
+% \renewcommand{\baselinestretch}{2}
+
+\title{日记本}
+\author{修格致}
+\date{2021年4月20日 至 \today}
+
+\begin{document}
+
+\maketitle
+
+% Turn the page numbering back on as roman numerals
+\pagenumbering{roman}
+
+% Table of contents etc.
+\tableofcontents
+% \listoffigures
+% \listoftables
+\newpage
+
+\section{前言}
+
+开始写的原因很简单，事情实在太多，多到不知道从哪里开始做。既然现在还处于有很多的科研想法的时期，那么还是尽量积累下来，如果哪天我不做科研了，能启发到一些小朋友也是很棒的。
+
+\input{./2021.4/2021-04.tex}
+
+% Now change to Arabic numerals
+
+% Include the bibliography (needs citations to work)
+\bibliographystyle{unsrt}
+\bibliography{ref}
+\end{document}
