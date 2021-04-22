@@ -1,0 +1,63 @@
+\subsection{扩散过程的谱性质}
+\begin{frame}{扩散过程的谱性质}
+    我们考虑一个复杂网络$G(V,E)$，其上有足够多的人在进行随机游走. 每个节点$i$上分配一个随机过程$x_i(t)$, 它可以代表$t$时刻恰好处于节点$i$上的人数。每一个人都以同样的概率$1/k_i$访问所处节点$i$的邻居，其中$k_i$是节点$i$的度。于是节点上人数随时间的变化可以写成一个微分方程\begin{align}
+    \begin{array}{cc}
+         \dot{x}_i &= -k_i x_i + \sum_{j\to i} x_j \\
+    &= -k_i x_i +\sum_{j \ne i} A_{ij} x_j,
+    \end{array}
+\end{align} 其中$A$是复杂网络的邻接矩阵。我们试图找到一个矩阵$L$, 使得网络上的动态可以用方程\begin{equation}
+    \dot{X} = - L X
+    \label{eq:dynamic_laplacian}
+\end{equation}来表示，其中$X(t) = (x_1(t), x_2(t), \dots, x_n(t))$。
+\end{frame}
+
+\begin{frame}{扩散过程的谱性质}
+    于是容易得到$L_{ij} = \delta_{ij}k_i - A_{ij}$. 我们称这个矩阵$L$为Laplace矩阵，并记它的特征值为$\lambda_n$, 对应的特征向量为$v_n$, $n = 1,2,3,\dots$. 根据基本的线性代数知识，我们有\begin{equation}
+    Lv_n = \lambda_n v_n, \Vert n = 1,2,3,\dots.
+    \label{eq:eigen}
+\end{equation} 这一组特征向量可以作为一组基，唯一表示所有的$n$维向量。特别的，可以表示$X(t) = (x_1(t), x_2(t), \dots, x_n(t))$为\begin{equation}
+    x_n = \sum_n c_n v_n, 
+    \label{eq:representation}
+\end{equation}其中$c_n$为系数。将 (\ref{eq:eigen}), (\ref{eq:representation})代入 (\ref{eq:dynamic_laplacian}), 可得\begin{align}
+        \partial_t \sum c_n(t)v_n = -L\sum c_n(t) v_n\\
+        = -\sum c_n(t)\lambda_n v_n.
+\end{align}
+\end{frame}
+
+\begin{frame}{扩散过程的谱性质}
+    根据唯一表示定理，每个特征向量$v_n$在等式两边的系数也是相等的，即\begin{equation}
+    \dot{c}_n = -cn\lambda_n,\quad \forall n.
+\end{equation}可以容易地解出每一个$c_n(t) = c_n(t) e^{-\lambda_n t}$. 进而系统可以写成：\begin{equation}
+    x(t) = \sum_n c_n(t) v_n = \sum_n c_n(0)e^{-\lambda_n t} v_n. 
+    \label{eq:repre}
+\end{equation}真实的扩散过程转移概率都是非负的，所以特征值$\lambda_{n}$都非负。而行和又都是$0$, 所以Laplace矩阵$L$都存在一个$0$特征值为$0$, 其对应的特征向量为$(1,1,\dots, 1)^{T}$. 该特征向量只保证了矩阵的归一性，而不包含其他信息。公式 (\ref{eq:repre})告诉我们，对于一个Laplace动力系统来说，最小的特征值和其对应的特征向量是最重要的。因为系统沿着该特征向量方向收敛的速度是最慢的，可以在更长的时间尺度上保留这个方向上的性质。
+\end{frame}
+
+
+
+
+% \subsection{动态网络下流行病传播模型}
+% \begin{frame}{问题介绍}
+%     \begin{itemize}
+%     \item SIR模型
+%     \begin{itemize}
+%         \item Susceptible,Infected,Recovered
+%     \end{itemize}
+%     \item 配置网络模型
+%     \begin{itemize}
+%         \item 度分布$\{p_{k}\}$，母函数$H(s)$
+%         \item 给定一个点$X$及一条以之为端点的边$(X,y)$，$y=Y$的概率正比于点Y的度
+%         \item 极限性质：度越大，连边概率越高——可用数学语言描述
+%     \end{itemize}
+%     \item 推广的再生率
+%     \begin{itemize}
+%         \item 现有再生率概念的缺陷：大流行和$R_{0}$的矛盾
+%     \end{itemize}
+%     \item 交换机制
+%     \begin{itemize}
+%         \item $(X,Y)+(Z,T)\rightarrow (X,Z)+(Y,T)$
+%         \item 维持个体的度不变的性质
+%     \end{itemize}
+% \end{itemize}
+% \end{frame}
+
