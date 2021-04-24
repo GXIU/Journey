@@ -35,15 +35,17 @@ Dear both,
 
 附上一部分新版本Allee的稿子：
 
-The rapid spread of the COVID-19 in urban areas demonstrated the vulnerability of cities under external attacks. Witnessing the obstable of politicisation of control measures and people's willingness to adopt recommended measures~\cite{wells2021interplay}, quantifying the interplay between acceptance of non-pharmaceutical interventions (the adoption of masks and physical distancing) and pharmaceutical interventions (hospital cares, vaccination, etc.) seems of great concern. However, due to the complexity of human mobility, heterogeneous spatial distribution of the infected, and the unfairness of medical resources, predicting the outbreaks of the epidemic under different controlling measures is hard.
+The rapid spread of the COVID-19 in urban areas demonstrated the vulnerability of cities under external attacks. However, owing to the tangled nature of the spreading process among urban patches and witnessing the obstable of politicisation of control measures and people's willingness to adopt recommended measures~\cite{wells2021interplay}, quantifying the interplay between acceptance of non-pharmaceutical interventions (the adoption of masks and physical distancing) and pharmaceutical interventions (hospital cares, vaccination, etc.) seems of great concern. However, due to the complexity of human mobility, heterogeneous spatial distribution of the infected, and the unfairness of medical resources, predicting the outbreaks of the epidemic under different controlling measures is hard.
 
-In the view of dynamical ecological system, epidemic spreading among $S$ urban patches (for example, communities and street blocks) can be understood as the interaction of infected subpopulations. Specifically, if we regard the infected population $I_{i}$ in an urban patch $i$ as a species, the spread of a disease results in the changes in the abundance. Thus the interaction of epidemic spreading can be described by a community matrix $M$, sized $S\times S$. In urban context, the diagonal elements of matrix $M$ representing self-regulation are determined by both self-recovery and hospital capacity. The elements of $M$ changes dramatically with the spatial distribution of infection rate in a city, but can be regard as linear operator near a feasible equilibrium point, for an obvious example, $I_{i} = 0$ for $i$ in $1,2,\dots, S$. If the system does not satisfy some local stability criteria, infinitesimal perturbations drive the system away from the significant equilibrium point of totally uninfected, $I^{*} = {(0,0,\dots, 0)}^T$, i.e., an epidemic outbreak. Mathematically, the equilibrium is only stable if each of the real parts of community matrix's eigenvalues is negative.
+In the view of dynamical ecological system, epidemic spreading among $S$ urban patches (for example, communities and street blocks) can be understood as the interaction of infected subpopulations. Specifically, if we compare the infected population $I_{i}$ in an urban patch $i$ to a species, the spread of a disease results in the changes in the abundance of $I_{i}$ for $i$ in $1,2,3,\dots, S$, which fluctuate through human mobility networks and local spreading. Thus the interaction of epidemic spreading can be described by a community matrix $M$, sized $S\times S$. In urban context, the diagonal elements of matrix $M$ representing self-regulation are determined by both self-recovery and hospital capacity. The elements of $M$ changes dramatically with the spatial distribution of infection rate in a city, but can be regard as linear operator near a feasible equilibrium point, for an obvious example, $I_{i} = 0$ for $i$ in $1,2,\dots, S$. If the system does not satisfy some local stability criteria, infinitesimal perturbations drive the system away from the significant equilibrium point of totally uninfected, $I^{*} = {(0,0,\dots, 0)}^T$, i.e., an epidemic outbreak. Mathematically, the equilibrium is only stable if each of the real parts of community matrix's eigenvalues is negative.
 
 Epidemic spread in cities can easily adopt the stability framework described in~\cite{allesina2012stability}, by defining the proportion of non-minimal interactions that contain infected individuals between different urban patches as $C$, and approximate the rate of recovery to be even all over a city so that $-d = \text{diag} M = \text{tr} M / S$. Further, human mobility among urban patches are well-documented as power-law, the variance of the urban visitation, denoted as $\sigma^2$, is presumably very large.
 
 Unlike the community matrix in natural and random systems described in~\cite{may1972will, allesina2012stability}, the induced epidemic-spreading community matrix is extremely hard to be stable, since all the pairwise interaction corresponds to spreading is non-negative. Following the criteria in~\cite{allesina2012stability}, the system is only stable if $\sqrt{SC} < \theta = d / \sigma$. Thus, to control a pandemic, counting on the pharmeceutical resources captured in parameter $d$ is far from enough. Designing reasonable non-pharmeceutical interventions to restrict human mobility in cities is of great importance and the main concern of this paper.
 
-今天开完组会蹲在416进门的地方想哭来着，没想到放了个屁。自己想想，我还是喜欢自己的科研的，但我还喜欢科研吗？我也不知道。深深地被打败。
+今天开完组会蹲在416进门的地方想哭来着，没想到放了个屁。ppt也上传到同一个目录了。
+
+自己想想，我还是喜欢自己的科研的，但我还喜欢科研吗？我也不知道。深深地被打败。
 
 22日。
 
@@ -63,3 +65,20 @@ Unlike the community matrix in natural and random systems described in~\cite{may
 注意捕食被捕食系统中，$E(M_{ij}M_{ji})_{i \ne j} = -CE^{2}(|X|)$, 而随机情况则是$0$. 捕食被捕食网络可以通过$M/(\sigma \sqrt{SC})$得到如上要求的矩阵。\textbf{对角线元素的作用}：自我消化能力，使得系统便稳定。于是稳定性条件是$a < d$, 也就是 $\sigma\sqrt{SC}(1-E^{2}(|X|)/\sigma^{2}) < d$.
 
 实验2: 人类移动性的分布规律 （flowwise），以及对称元素的相关性。hint，去掉相关性可能是稳定化系统的重要途径？让去不让回，这种。
+
+\dotfill
+
+中午跟导师吃饭了，他没事闲的又给我爸打了个电话，我白眼都要飞到天上去了。于是开始将军，问如果我今年发了三篇论文，可不可以提前毕业。他表示那当然可以商量了。算他干了一回人事。这就是记日记的好处啊，到时候他不认账了我还可以去跟他对质。
+
+
+23日。
+
+已经13:52了，还没有出现。心态崩了诶。
+
+口罩也该写了吧。
+
+24日。
+
+Allee新摘要：
+
+Human mobility network of intra-city flow is complex and densely connected, to help the city to maintain functions and convenience. However, when a pandemic hits a city, its spread through the mobility network is usually drastically. Here, we develop a set of ecological theory to help us understand the intra-city disease outbreak by studying the stability of the infected subpopulation in each urban patches. We prove that though the densely connected urban mobility network is effective and productive, it is often unstable in resisting external hits of diseases. We further investigate how the stability is reached through some non-pharmeceutical interventions which decrease the connectivity among the urban patches. More generally, by designing urban mobility network to be more circular and less connected, it is possible to reach stability with arbitrary pharmeceutical condition of a city. We analyzed different types of artificial and realistic mobility networks with different types of interventions—and compared with the data of real-life cases to support our key predictions.
