@@ -82,3 +82,41 @@ Unlike the community matrix in natural and random systems described in~\cite{may
 Allee新摘要：
 
 Human mobility network of intra-city flow is complex and densely connected, to help the city to maintain functions and convenience. However, when a pandemic hits a city, its spread through the mobility network is usually drastically. Here, we develop a set of ecological theory to help us understand the intra-city disease outbreak by studying the stability of the infected subpopulation in each urban patches. We prove that though the densely connected urban mobility network is effective and productive, it is often unstable in resisting external hits of diseases. We further investigate how the stability is reached through some non-pharmeceutical interventions which decrease the connectivity among the urban patches. More generally, by designing urban mobility network to be more circular and less connected, it is possible to reach stability with arbitrary pharmeceutical condition of a city. We analyzed different types of artificial and realistic mobility networks with different types of interventions—and compared with the data of real-life cases to support our key predictions.
+
+intro最后一段：
+
+Therefore, to understand the stability of fixed point $I_0 = (0,0,\dots,0)^T$ of city’s infected subpopulation, we have to consider the specific effect of spreading through mobility network, and how the intrinsic hospital capacity of each city can resolve the epidemic spreading. To this end, we develop a set of specific theory based on parallel topics on human microbial. First, we develop general stability criteria for all kinds of epidemic spreads among urban patches, which includes all possible urban sizes and connectedness. (是不是可能也可以导出 CCS？) Specifically, we can consider the mobility network with arbitrary connectivity $C$ and city size $S$, and how different types of network structures affects the hospital capacity for the city to remain stability. Stability is derived through the eigenvalues of the community matrix of infected subpopulations, where the interaction is derived through transmission through local and spatial interactions which are linear approximated at $I_0$. Our method predicts the system dynamic of epidemic spreading induced by external hits, the stability criteria of a city given hospital capacity, and how much can non-pharmeceutical interventions help to mitigate the outbreaks.
+
+\todo{aaa}
+
+\missingfigure{HUPU}
+
+25日。
+
+今天剪了一个妈都不认识的头发，好久没有短发过了。中午吃了唇辣号，上次吃是19年2月，我至今还记得。
+
+上午Allee有一个进展：dear both, 我忽然想这样模型可能跟临界社区大小（critical community size CCS）还是有一定关系，$\sqrt{SC} = d/sigma$ 的话，医疗水平$d$随着城市规模增大的速度如果不到1/2幂律的话，那可能就更容易爆发。所以可能需要做一个简单的回归，x轴是城市规模/CT数，纵轴是平均每个床位的人数/医生患者比。
+
+这意味着，超线性与亚线性规律的一个实际应用，即一些临界条件（如CCS）可能会导致大城市与小城市有一些机理上的区别。
+
+26日。
+
+张原老师还是没有回复，我只好尝试自己往下推进一下了。
+
+We first denote the exit probability as $\mathcal{E}_n$, i.e., starting from $n$ nodes wearing masks, the probability of a mask-wearing consensus. Using a backward equation, we have~\begin{align}
+    \mathcal{E}_n = w_{n\to n+1}\mathcal{E}_{n+1} + w_{n\to n-1} \mathcal{E}_{n-1} + w_{n\to n} \mathcal{E}_{n},
+\end{align} where $w_{i,j}$ is the transition probability when selecting a triangle. Take a large population $N$, let $\rho_2$ substitute $n/N$, and let $\delta x$ substitute $1$, we have~\begin{align}
+    \mathcal{E}(x) = 3(1-x)x^2\mathcal{E}(x+\delta x) + 3x(1-x)^2 \mathcal{E}(x-\delta x) + (x^3 + (1-x)^3) \mathcal{E}(x)
+\end{align}
+
+这个我好像解出来了，但是形式好奇怪，甚至好像是单调的。
+
+Allee的每段要说什么：\begin{enumerate}
+    \item 人类移动性对于城市发展的意义，但是其在保证城市连通性的时候为流行病传播等问题带来了隐患。这种城市面对冲击的抵抗力通常被称为resilience。resilience高的城市，冲击在城市内部扩散得比较慢；低的城市扩散得比较快。
+    \item 针对城市内部疫情传播的规模和速度的研究有了很多empirical work，也有一些工作基于微观交互得到了一些疾病传播的预测。但我们仍然缺乏一个理解城市体系对流行病冲击的宏观模型。基于城市区块之间的meta-population模型和群体移动性进行多主体模拟的工作已经给出了一些进展，但是计算量太大，随机性太强，很难得到统一的结论。这里，我们借用理论生态学的理论来建模，将不同区域被感染的人比作不同的物种，那么发病率比较低的时候，流行病种群的交互网络可以用移动性矩阵和发病率来导出。我们结合了网络动态过程和稳定性理论，确定城市是否具有抵抗移情能力的一般性准则，并于传统的临界社区大小理论相呼应。然后，通过这些原则来分析不同的非医疗措施对于疫情传播的具体影响：即是否可以通过该intervention使得城市达到稳定。我们的预测得到了美国county、census tract尺度数据的支持。
+    \item May的工作表明，生态系统的稳定性通常受物种多样性和其交互强度的抑制。在探讨城市内的疫情传播时，如果将街区、census tract等介观尺度空间单元中的患病人数比作物种，则对于交互更紧密、空间单元更多的大城市来说，其稳定性将更加难以达到。这个conjecture与流行病中的Critical Community Size问题在动力学上是“chime with”的。另一方面，不像其他的生态系统中有着常数的衰亡指数，不同城市患病人口的自然衰减速度与该区域的医疗条件有关。大城市更好的医疗条件与更致密的交互之间的interplay使稳定性问题显得更加复杂。
+    \item 因此，为了了解城市在抵抗疫情传播时体现出的稳定性，我们必须理解移动性及其限制的影响。Therefore, to understand the stability of fixed point $I_0 = (0,0,\dots,0)^T$ of city’s infected subpopulation, we have to consider the specific effect of spreading through mobility network, and how the intrinsic hospital capacity of each city can resolve the epidemic spreading. To this end, we develop a set of specific theory based on parallel topics on human microbial. First, we develop general stability criteria for all kinds of epidemic spreads among urban patches, which includes all possible urban sizes and connectedness. (是不是可能也可以导出 CCS？) Specifically, we can consider the mobility network with arbitrary connectivity $C$ and city size $S$, and how different types of network structures affects the hospital capacity for the city to remain stability. Stability is derived through the eigenvalues of the community matrix of infected subpopulations, where the interaction is derived through transmission through local and spatial interactions which are linear approximated at $I_0$. Our method predicts the system dynamic of epidemic spreading induced by external hits, the stability criteria of a city given hospital capacity, and how much can non-pharmeceutical interventions help to mitigate the outbreaks.
+    \item 大城市更加不稳定：我们首先做一个较为粗糙的假定，医疗资源是全程等效可达的，并认为医疗救治能力正比于平均单病床救治人数。这使得有着更好医疗资源的大城市更倾向于达到稳定。但事实与此相反：We first show that the destabilizing effect of larger complex systems (i.e., here larger cities) proved by May still stands for epidemic spreading in cities. As also showed in [] and our empirical experiments (in SI), though with better medical resource, larger cities tend induce more disease outbreaks. In our model, the medical status of a city is recorded in parameter $d$. While the larger cities has better medical status, it increases slower than a power $1/2$ of the population sizes (fig.1 xxx) which results in the emergence of critical community size (CCS) described in many literature. Random infections can turn into an epidemic in the cities with larger population than the CCS, while they cannot if the population size of the city is below the CCS. For the COVID-19 spreading without the restrictions on human mobility, the stability-based CCS is approximately xxx people/city, which is about the population of the xxxth city in the United States.
+    \item 这种方法是局部稳定性分析，可以分析在某个稳定点附近的病情发展是否是稳定的。而基于矩阵的方法还可以分析疫情发展的动态过程：This method is called the local stability analysis, which is extremely convenient and provides common understanding of how a city’s current mobility conditions lead to a pandemic or not. Though this method was believed only to provide insights in the systems near the critical point, it can also provide the dynamical information of the system at each incidence rate. The incidence rates of different urban patches evolve to be proportional to the eigenvectors at the exponential rate of the corresponding eigenvalues of the infected community matrix. This analysis leads to the same conclusion that the only state of a city’s stability is when all the real-parts of the community matrix are non-positive. However, this dynamical analysis tend to underestimate the size of an outbreak when the infection rate is high, as specified in the supplementary materials.
+    \item 在我们的模型中，大城市不稳定的原因是，致密的交互结构和更多的城市组分带来的正向作用远远大于更高医疗水平带来的修正效应。
+\end{enumerate}
